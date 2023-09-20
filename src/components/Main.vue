@@ -1,5 +1,6 @@
 <script>
 import Title from "./Title.vue";
+import Button from "./Button.vue";
 
 export default {
   data() {
@@ -14,7 +15,7 @@ export default {
     };
   },
 
-  components: { Title },
+  components: { Title, Button },
 };
 </script>
 
@@ -67,6 +68,24 @@ export default {
       </div>
     </div>
   </section>
+
+  <!-- banner -->
+  <div class="banner">
+    <div
+      class="container d-flex justify-content-center align-items-center gap-4"
+    >
+      <h2>We help to deliver the business case</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi modi
+        numquam adipisci non esse ipsa. Ex corporis quaerat maiores quam non
+        iste recusandae. Facere esse harum excepturi placeat quibusdam non!
+      </p>
+    </div>
+
+    <div class="banner__button">
+      <Button bgColor="secondary">get started</Button>
+    </div>
+  </div>
 </template>
 
 <style lang="scss" scoped>
@@ -161,6 +180,30 @@ h2 {
     display: flex;
     align-items: center;
     padding: 0 4em;
+  }
+}
+
+.banner {
+  background-color: $main-accent2;
+  position: relative;
+  padding: 5em 0;
+
+  p {
+    flex-basis: 50%;
+    text-align: justify;
+  }
+
+  h2 {
+    color: $dark-blue;
+    font-size: 2em;
+    flex-basis: 30%;
+  }
+
+  .banner__button {
+    position: absolute;
+    z-index: 500;
+    bottom: 0;
+    right: 0;
   }
 }
 </style>
