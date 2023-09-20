@@ -5,7 +5,9 @@ import Footer from "./components/Footer.vue";
 
 export default {
   data() {
-    return {};
+    return {
+      footerMenu: ["Home", "About", "Projects", "Services", "Blog", "Contact"],
+    };
   },
 
   components: { Header, Main, Footer },
@@ -15,7 +17,7 @@ export default {
 <template>
   <Header />
   <Main />
-  <Footer />
+  <Footer :footerMenu="footerMenu" />
 </template>
 
 <style lang="scss">
