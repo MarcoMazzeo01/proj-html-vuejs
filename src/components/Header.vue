@@ -15,7 +15,7 @@ export default {
 </script>
 
 <template>
-  <header>
+  <header id="header">
     <nav class="d-flex justify-content-between align-items-center">
       <div>
         <img :src="logo" alt="logo" />
