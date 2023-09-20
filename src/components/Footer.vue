@@ -39,8 +39,8 @@ export default {
           </div>
           <!-- menu -->
           <ul class="menu">
-            <li v-for="item in footerMenu">
-              <a href="">{{ item }}</a>
+            <li v-for="(link, name, index) in footerMenu">
+              <a :href="link">{{ name }}</a>
             </li>
           </ul>
           <!-- socials -->

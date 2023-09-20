@@ -6,10 +6,10 @@ export default {
   data() {
     return {
       logo: "/images/logotype.png",
-      menuItems: ["Home", "About", "Projects", "Services", "Blog", "Contact"],
     };
   },
 
+  props: ["headerMenu"],
   components: { Button, Title },
 };
 </script>
@@ -22,7 +22,9 @@ export default {
       </div>
 
       <ul class="menu">
-        <li v-for="item in menuItems">{{ item }}</li>
+        <li v-for="(link, name, index) in headerMenu">
+          <a :href="link">{{ name }}</a>
+        </li>
       </ul>
     </nav>
 
@@ -84,6 +86,11 @@ header {
     color: $opaque-white;
     font-family: $poppins-font;
     font-weight: 200;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
   }
 
   li:hover {

@@ -6,7 +6,14 @@ import Footer from "./components/Footer.vue";
 export default {
   data() {
     return {
-      footerMenu: ["Home", "About", "Projects", "Services", "Blog", "Contact"],
+      menuItems: {
+        Home: "#",
+        About: "#about",
+        Projects: "#projects",
+        Services: "",
+        Blog: "",
+        Contact: "#contact",
+      },
     };
   },
 
@@ -15,9 +22,9 @@ export default {
 </script>
 
 <template>
-  <Header />
+  <Header :headerMenu="menuItems" />
   <Main />
-  <Footer :footerMenu="footerMenu" />
+  <Footer :footerMenu="menuItems" />
 
   <div class="floating_buttons">
     <button type="button" class="go-up">
