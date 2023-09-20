@@ -30,10 +30,12 @@ export default {
     <!-- bottom footer -->
     <section id="footer__bottom">
       <div class="container">
-        <div class="footer__bottom__upper d-flex justify-content-between">
+        <div
+          class="footer__bottom__upper d-flex justify-content-between align-items-center"
+        >
           <!-- logo -->
           <div class="footer__logo">
-            <img src="images/logotype-2-150x25.png" alt="" srcset="" />
+            <img src="images/logotype-2-150x25.png" alt="logo" />
           </div>
           <!-- menu -->
           <ul class="menu">
@@ -89,6 +91,7 @@ export default {
   .menu {
     display: flex;
     gap: 1em;
+    margin: 0;
   }
   .menu > li {
     display: inline-block;
@@ -104,6 +107,15 @@ export default {
 
   hr {
     border-color: $translucent-white2;
+  }
+}
+
+.footer__logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 70%;
   }
 }
 
