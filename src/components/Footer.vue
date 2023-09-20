@@ -92,6 +92,8 @@ export default {
   }
   .menu > li {
     display: inline-block;
+    font-family: $poppins-font;
+    font-weight: 300;
 
     a {
       text-decoration: none;
