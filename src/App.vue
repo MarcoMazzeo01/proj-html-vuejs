@@ -11,7 +11,7 @@ export default {
         About: "#about",
         Projects: "#projects",
         Services: "",
-        Blog: "",
+        Blog: "#blog",
         Contact: "#contact",
       },
     };
