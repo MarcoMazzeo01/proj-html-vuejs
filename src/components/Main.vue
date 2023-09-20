@@ -1,4 +1,6 @@
 <script>
+import Title from "./Title.vue";
+
 export default {
   data() {
     return {
@@ -11,6 +13,8 @@ export default {
       },
     };
   },
+
+  components: { Title },
 };
 </script>
 
@@ -44,13 +48,38 @@ export default {
       </div>
     </div>
   </section>
+
+  <!-- * ABOUT US * -->
+  <section id="about">
+    <div class="left"></div>
+    <div class="right">
+      <div class="container">
+        <Title>About Us</Title>
+        <h2>We make your strategy work</h2>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo labore
+          assumenda alias repudiandae cumque, fugit maiores odio. Enim ipsam
+          aspernatur accusamus impedit esse? Perferendis rem doloremque
+          inventore fugiat, tenetur molestias? Dolores in excepturi dicta eius
+          autem nam ipsa exercitationem at assumenda dolor sequi, dignissimos
+          optio? Illum temporibus odio, eligendi corrupti.
+        </p>
+      </div>
+    </div>
+  </section>
 </template>
 
 <style lang="scss" scoped>
-* {
-  //   outline: red solid 1px;
+h2 {
+  font-family: $titles-font;
+  color: $opaque-white;
+  text-transform: uppercase;
+  font-size: 3em;
+  font-weight: 500;
+  line-height: 0.9em;
 }
 
+// CONSULTING SECTION
 #consulting {
   background-color: $opaque-white;
   padding: 6em 0;
@@ -67,7 +96,7 @@ export default {
 
 #consulting h6::after {
   content: "";
-  width: 100%;
+  width: 67%; //non so come far toccare il margine della pagina senza rompere tutto
   margin-left: 10px;
   background-color: $main-accent2;
   height: 1.5px;
@@ -110,6 +139,28 @@ export default {
       color: $dark2;
       font-weight: 300;
     }
+  }
+}
+
+// ABOUT US SECTION
+#about {
+  min-height: 100vh;
+  display: flex;
+
+  .left {
+    background-color: $secondary-accent1;
+
+    flex-basis: 60%;
+    background-image: url("images/business-people-working-together-on-project-and-5FHSKBL.jpg");
+  }
+
+  .right {
+    @include solid_gradient;
+    flex-basis: 40%;
+    color: $translucent-white2;
+    display: flex;
+    align-items: center;
+    padding: 0 4em;
   }
 }
 </style>
