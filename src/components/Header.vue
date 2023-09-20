@@ -1,5 +1,6 @@
 <script>
 import Button from "./Button.vue";
+import Title from "./Title.vue";
 
 export default {
   data() {
@@ -9,7 +10,7 @@ export default {
     };
   },
 
-  components: { Button },
+  components: { Button, Title },
 };
 </script>
 
@@ -28,6 +29,7 @@ export default {
     <div class="jumbotron">
       <div class="jumbotron__inner-container">
         <div class="jumbotron__container">
+          <Title>Always the best way you need it</Title>
           <h1>The best business Consulting</h1>
           <Button bgColor="primary">Read More</Button>
           <div class="playButton">
@@ -118,19 +120,20 @@ header {
       position: relative;
       width: 100%;
       max-width: 100%;
-      left: 50%;
-      top: 20%;
+      left: 25%;
+      top: 30%;
     }
   }
 }
 
 h1 {
   color: $opaque-white;
-  font-size: 4.5em;
+  font-size: 5em;
   text-transform: uppercase;
   font-family: $titles-font;
   font-weight: 600;
   margin-bottom: 0.5em;
+  line-height: 0.9em;
 }
 
 .playButton {
