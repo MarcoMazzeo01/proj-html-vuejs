@@ -14,8 +14,7 @@ export default {
 
 <template>
   <Header />
-
-  <div style="background-color: green; height: 200px">Hihihih</div>
+  <Main />
 </template>
 
 <style lang="scss">
