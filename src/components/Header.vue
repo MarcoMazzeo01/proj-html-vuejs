@@ -1,4 +1,6 @@
 <script>
+import Button from "./Button.vue";
+
 export default {
   data() {
     return {
@@ -6,6 +8,8 @@ export default {
       menuItems: ["Home", "About", "Projects", "Services", "Blog", "Contact"],
     };
   },
+
+  components: { Button },
 };
 </script>
 
@@ -23,8 +27,12 @@ export default {
 
     <div class="jumbotron">
       <div class="jumbotron__inner-container">
-        <div>
+        <div class="jumbotron__container">
           <h1>The best business Consulting</h1>
+          <Button bgColor="primary">Read More</Button>
+          <div class="playButton">
+            <font-awesome-icon :icon="['fas', 'play']" style="color: #39ffbf" />
+          </div>
         </div>
       </div>
     </div>
@@ -35,7 +43,7 @@ export default {
 $menu-height: 80px;
 
 * {
-  // outline: 2px dashed white;
+  outline: 0px dashed white;
 }
 
 header {
@@ -106,7 +114,7 @@ header {
     height: 100%;
     width: 35%;
 
-    div {
+    .jumbotron__container {
       position: relative;
       width: 100%;
       max-width: 100%;
@@ -122,5 +130,17 @@ h1 {
   text-transform: uppercase;
   font-family: $titles-font;
   font-weight: 600;
+  margin-bottom: 0.5em;
+}
+
+.playButton {
+  margin-left: 2em;
+  width: 40px;
+  aspect-ratio: 1;
+  border: 2px solid $opaque-white;
+  border-radius: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>
