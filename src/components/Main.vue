@@ -86,6 +86,55 @@ export default {
       <Button bgColor="secondary">get started</Button>
     </div>
   </div>
+
+  <!-- * BLOG * -->
+  <section id="blog">
+    <div class="container">
+      <Title>Blog</Title>
+      <div class="d-flex justify-content-between align-items-center">
+        <h2>Recent news you can't miss</h2>
+        <Button bgColor="primary">View All</Button>
+      </div>
+
+      <div class="posts_container container d-flex gap-4">
+        <div class="blog__post">
+          <img
+            src="images/startup-business-people-and-strategy-board-PAJ3P9K-1390x1042.jpg"
+            alt="blog_pic"
+          />
+
+          <div class="post__description">
+            <span>July 4, 2019 by Paul</span>
+            <h3>Canadian Consulting Firm acquired by UK giant</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
+              facilis quia dignissimos laboriosam soluta sit illo non labore,
+              unde magnam aperiam exercitationem officia accusamus deserunt
+              animi, aliquid quisquam nam illum.
+            </p>
+          </div>
+        </div>
+
+        <div class="blog__post">
+          <img
+            src="images/business-people-working-together-on-project-and-5FHSKBL-1390.jpg"
+            alt="blog_pic"
+          />
+
+          <div class="post__description">
+            <span>July 4, 2019 by Paul</span>
+            <h3>Canadian Consulting Firm acquired by UK giant</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
+              facilis quia dignissimos laboriosam soluta sit illo non labore,
+              unde magnam aperiam exercitationem officia accusamus deserunt
+              animi, aliquid quisquam nam illum.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </template>
 
 <style lang="scss" scoped>
@@ -205,5 +254,59 @@ h2 {
     bottom: 0;
     right: 0;
   }
+}
+
+// BLOG SECTION
+#blog {
+  background-color: #22213c;
+  padding: 4em 0;
+  padding-bottom: 6em;
+
+  h2 {
+    font-size: 2em;
+  }
+
+  .blog__post {
+    width: 50%;
+    position: relative;
+    object-fit: contain;
+
+    img {
+      max-width: 100%;
+    }
+
+    .post__description {
+      background-color: $opaque-white;
+      width: 70%;
+      position: absolute;
+      z-index: 100;
+      bottom: -15%;
+      right: 0;
+      padding: 1em 2em;
+
+      h3 {
+        font-size: 1.5em;
+        font-family: $titles-font;
+      }
+
+      p {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      span {
+        color: $secondary-accent2;
+        font-size: 0.8em;
+        font-family: $poppins-font;
+        font-weight: 300;
+      }
+    }
+  }
+}
+
+.posts_container {
+  margin-top: 3em;
 }
 </style>
