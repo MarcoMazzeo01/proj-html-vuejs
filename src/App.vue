@@ -15,11 +15,17 @@ export default {
 <template>
   <Header />
   <Main />
+  <Footer />
 </template>
 
 <style lang="scss">
 @import "./assets/scss/style.scss";
 
+p {
+  font-weight: 300;
+}
+
+// ! SCROLLBAR ! //
 /* Firefox */
 * {
   scrollbar-width: thin;
