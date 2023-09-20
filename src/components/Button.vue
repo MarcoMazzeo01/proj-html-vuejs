@@ -34,6 +34,7 @@ button {
   font-weight: 300;
   border: none;
   padding: 0.7em 2em;
+  cursor: pointer;
 }
 
 .primary {
