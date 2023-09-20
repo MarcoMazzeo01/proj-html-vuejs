@@ -12,6 +12,10 @@ export default {
 };
 </script>
 
-<template></template>
+<template>
+  <Header />
+
+  <div style="background-color: green; height: 200px">Hihihih</div>
+</template>
 
 <style lang="scss"></style>
