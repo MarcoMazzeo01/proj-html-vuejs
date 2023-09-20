@@ -63,7 +63,7 @@ export default {
             <li>Privacy Policy</li>
           </ul>
 
-          <p>Copyright &copy; 2020 Phlox Consulting. All Rights Reserved.</p>
+          <p>Copyright &copy; 2023 Phlox Consulting. All Rights Reserved.</p>
         </div>
       </div>
     </section>
