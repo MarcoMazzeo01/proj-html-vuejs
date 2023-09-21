@@ -73,6 +73,7 @@ export default {
 <style lang="scss" scoped>
 #footer__jumbotron {
   background-image: url("images/business-people-working-together-on-project-and-B3MZ4TX.jpg");
+  background-size: cover;
   color: $opaque-white;
   padding: 5em 0;
 

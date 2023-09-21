@@ -126,6 +126,7 @@ header {
   background-image: url("images/portrait-of-young-architect-woman-on-meeting-KFZCE3A.jpg");
   background-repeat: no-repeat;
   background-position: 430px;
+  background-size: cover;
 
   .jumbotron__inner-container {
     @include solid_gradient;
