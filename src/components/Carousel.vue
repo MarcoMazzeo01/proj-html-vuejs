@@ -151,4 +151,19 @@ export default {
     font-weight: 700;
   }
 }
+
+.arrows {
+  display: flex;
+  gap: 5px;
+  margin: 1em 0;
+  justify-content: end;
+
+  button {
+    color: $opaque-white;
+    background-color: #36354b;
+    border: 0;
+    font-size: 0.8em;
+    padding: 0.5em;
+  }
+}
 </style>
