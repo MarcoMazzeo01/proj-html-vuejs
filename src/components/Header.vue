@@ -6,6 +6,7 @@ export default {
   data() {
     return {
       logo: "/images/logotype.png",
+      activeItem: "Home",
     };
   },
 
@@ -22,8 +23,11 @@ export default {
       </div>
 
       <ul class="menu">
-        <li v-for="(link, name, index) in headerMenu">
-          <a :href="link">{{ name }}</a>
+        <li
+          v-for="(link, name, index) in headerMenu"
+          :class="activeItem == name ? 'active' : ''"
+        >
+          <a :href="link" @click="activeItem = name">{{ name }}</a>
         </li>
       </ul>
     </nav>
@@ -54,7 +58,7 @@ header {
   position: relative;
 
   nav {
-    position: fixed;
+    position: absolute;
     top: 0;
     width: 100%;
     height: $menu-height;
@@ -96,6 +100,11 @@ header {
   li:hover {
     animation: borderAnimation 0.25s;
     animation-fill-mode: forwards;
+  }
+
+  .active {
+    border-top: 5px solid $opaque-white;
+    font-weight: 500;
   }
 }
 
