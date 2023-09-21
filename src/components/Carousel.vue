@@ -107,6 +107,7 @@ export default {
     width: calc(100% / 3);
     height: auto;
     position: relative;
+    background-color: $secondary-accent2;
 
     img {
       max-width: 100%;
@@ -114,8 +115,9 @@ export default {
     }
 
     .filter {
-      filter: invert(30%) sepia(50%) saturate(675%) hue-rotate(-30deg)
-        brightness(70%) contrast(170%);
+      //   filter: invert(30%) sepia(50%) saturate(675%) hue-rotate(-30deg)
+      //     brightness(70%) contrast(170%);
+      mix-blend-mode: darken;
     }
 
     .description {
