@@ -3,12 +3,24 @@ export default {
   data() {
     return {
       images: [
-        "DRY-1-790x592", //dry
-        "221bf0b7-8134-43bb-936a-5acbe42db64a-790x592", //sponsorship
-        "z1el4c4p-790x592", //vizeon
-        "12679",
-        "oliver-ragfelt-488196-2",
-        "oliver-ragfelt-488196-unsplash",
+        {
+          title: "DRY Project",
+          img: "DRY-1-790x592",
+          category: "Social",
+          showDesc: false,
+        },
+        {
+          title: "Purinky Products",
+          img: "221bf0b7-8134-43bb-936a-5acbe42db64a-790x592",
+          category: "Branding",
+          showDesc: false,
+        },
+        {
+          title: "Verizon",
+          img: "z1el4c4p-790x592",
+          category: "Website",
+          showDesc: false,
+        },
       ],
 
       currentIndexes: [0, 1, 2],
@@ -16,45 +28,72 @@ export default {
   },
 
   methods: {
-    forward() {
-      this.currentIndexes.forEach((num, i) => {
-        if (this.currentIndexes[i] >= this.images.length - 1) {
-          this.currentIndexes[i] = 0;
-        } else {
-          this.currentIndexes[i] = num + 1;
-        }
-      });
+    nextImg() {
+      let lastIndex = this.currentIndexes.length - 1;
+      let nextIndex = this.currentIndexes[lastIndex] + 1;
 
-      console.log(this.currentIndexes);
+      // If the next index exceeds the images length, reset it to 0
+      if (nextIndex > this.images.length - 1) {
+        nextIndex = 0;
+      }
+
+      // Shift all current indexes to the left (removing the first index)
+      this.currentIndexes.shift();
+
+      // Add the next index to the end of the array
+      this.currentIndexes.push(nextIndex);
     },
 
-    back() {
-      this.currentIndexes.forEach((num, i) => {
-        if (this.currentIndexes[i] == 0) {
-          this.currentIndexes[i] = this.images.length - 1;
-        } else {
-          this.currentIndexes[i] = num - 1;
-        }
-      });
+    prevImg() {
+      // Remove the last index from the currentIndexes
+      this.currentIndexes.pop();
+
+      // Calculate the previous index
+      let firstIndex = this.currentIndexes[0];
+      let prevIndex = firstIndex - 1;
+
+      // If the previous index is less than 0, set it to the last index of the images array
+      if (prevIndex < 0) {
+        prevIndex = this.images.length - 1;
+      }
+
+      // Add the previous index to the start of the array
+      this.currentIndexes.unshift(prevIndex);
     },
+  },
+
+  created() {
+    console.log(this.currentIndexes);
   },
 };
 </script>
 <template>
   <div class="arrows">
-    <button type="button" @click="back">
+    <button type="button" @click="prevImg">
       <font-awesome-icon icon="fa-solid fa-arrow-left-long" />
     </button>
-    <button type="button" @click="forward">
+    <button type="button" @click="nextImg">
       <font-awesome-icon icon="fa-solid fa-arrow-right-long" />
     </button>
   </div>
 
   <div class="carousel d-flex">
-    <template v-for="(image, index) in images">
-      <div class="carousel__content" v-show="currentIndexes.includes(index)">
-        <img :src="'images/' + image + '.jpg'" alt="img" />
-        <p class="debug">{{ index }}</p>
+    <template v-for="(imgIndex, index) in currentIndexes">
+      <div
+        class="carousel__content"
+        @mouseenter="images[imgIndex].showDesc = true"
+        @mouseleave="images[imgIndex].showDesc = false"
+      >
+        <img
+          :src="'images/' + images[imgIndex].img + '.jpg'"
+          alt="{{ images[imgIndex].title }}"
+          :class="images[imgIndex].showDesc ? 'filter' : ''"
+        />
+        <div class="description" v-show="images[imgIndex].showDesc">
+          <h3>{{ images[imgIndex].title }}</h3>
+          <p>{{ images[imgIndex].category }}</p>
+        </div>
+        <!-- <p class="debug">{{ index }}</p> -->
       </div>
     </template>
   </div>
@@ -73,8 +112,36 @@ export default {
       max-width: 100%;
       max-height: 100%;
     }
+
+    .filter {
+      filter: invert(30%) sepia(50%) saturate(675%) hue-rotate(-30deg)
+        brightness(70%) contrast(170%);
+    }
+
+    .description {
+      position: absolute;
+      bottom: 0;
+      padding: 1em;
+
+      p,
+      h3 {
+        color: $opaque-white;
+        margin: 0;
+      }
+
+      h3 {
+        font-family: $poppins-font;
+        font-size: 1.15em;
+        font-weight: 700;
+      }
+
+      p {
+        font-size: 0.9em;
+      }
+    }
   }
 
+  //debug class
   .debug {
     color: green;
     position: absolute;
