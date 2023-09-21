@@ -355,5 +355,7 @@ h2 {
 
 #projects {
   background-color: $dark-blue;
+  padding-top: 5em;
+  padding-bottom: 3em;
 }
 </style>
