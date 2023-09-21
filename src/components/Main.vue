@@ -105,10 +105,10 @@ export default {
         <h2>What our costumers say about us</h2>
       </div>
 
-      <div class="row bg-white justify-content-center py-5">
-        <div class="col-3" v-for="n in 3" :key="n">
+      <div class="row bg-white d-flex justify-content-center">
+        <div class="col-3 p-5" v-for="n in 3" :key="n">
           <blockquote>
-            <p class="text-secondary">
+            <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
               totam quam et! Dicta eaque odit assumenda voluptatem a magni
               aliquam exercitationem at, doloremque consequatur veniam debitis
@@ -353,6 +353,22 @@ h2 {
   }
 }
 
+#testimonials .row > .col-3:hover {
+  background-image: url("images/oliver-ragfelt-488196-2.jpg");
+  background-position: center;
+  background-size: cover;
+  color: white;
+}
+
+blockquote > p {
+  color: $dark2;
+}
+
+.col-3:hover blockquote > p {
+  color: white;
+}
+
+// PROJECTS \ PORTFOLIO
 #projects {
   background-color: $dark-blue;
   padding-top: 5em;
