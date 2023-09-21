@@ -1,6 +1,7 @@
 <script>
 import Title from "./Title.vue";
 import Button from "./Button.vue";
+import Carousel from "./Carousel.vue";
 
 export default {
   data() {
@@ -15,7 +16,7 @@ export default {
     };
   },
 
-  components: { Title, Button },
+  components: { Title, Button, Carousel },
 };
 </script>
 
@@ -86,6 +87,15 @@ export default {
       <Button bgColor="secondary">get started</Button>
     </div>
   </div>
+
+  <!-- * PROJECTS * -->
+  <section id="projects">
+    <div class="container">
+      <Title>Projects</Title>
+      <h2>How our consultants helped our costumers</h2>
+      <Carousel />
+    </div>
+  </section>
 
   <!-- * TESTIMONIALS * -->
   <section id="testimonials">
@@ -341,5 +351,9 @@ h2 {
     font-family: $titles-font;
     margin: 0;
   }
+}
+
+#projects {
+  background-color: $dark-blue;
 }
 </style>
