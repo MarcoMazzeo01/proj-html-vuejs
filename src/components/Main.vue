@@ -87,6 +87,31 @@ export default {
     </div>
   </div>
 
+  <!-- * TESTIMONIALS * -->
+  <section id="testimonials">
+    <div class="container-fluid">
+      <div class="container mb-4">
+        <Title>Testimonial</Title>
+        <h2>What our costumers say about us</h2>
+      </div>
+
+      <div class="row bg-white justify-content-center py-5">
+        <div class="col-3" v-for="n in 3" :key="n">
+          <blockquote>
+            <p class="text-secondary">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
+              totam quam et! Dicta eaque odit assumenda voluptatem a magni
+              aliquam exercitationem at, doloremque consequatur veniam debitis
+              dolorem deleniti sapiente eveniet.
+            </p>
+          </blockquote>
+          <h4>Vera Duncan</h4>
+          <p class="mb-0">Amazon Inc.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- * BLOG * -->
   <section id="blog">
     <div class="container">
@@ -138,11 +163,13 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+$bg-color: #22213c;
+
 h2 {
   font-family: $titles-font;
   color: $opaque-white;
   text-transform: uppercase;
-  font-size: 3em;
+  font-size: 2em;
   font-weight: 500;
   line-height: 0.9em;
 }
@@ -258,13 +285,9 @@ h2 {
 
 // BLOG SECTION
 #blog {
-  background-color: #22213c;
+  background-color: $bg-color;
   padding: 4em 0;
   padding-bottom: 6em;
-
-  h2 {
-    font-size: 2em;
-  }
 
   .blog__post {
     width: 50%;
@@ -308,5 +331,15 @@ h2 {
 
 .posts_container {
   margin-top: 3em;
+}
+
+#testimonials {
+  background-color: $bg-color;
+  padding-top: 4em;
+
+  h4 {
+    font-family: $titles-font;
+    margin: 0;
+  }
 }
 </style>
