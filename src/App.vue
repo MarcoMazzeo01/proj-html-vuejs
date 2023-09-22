@@ -27,11 +27,13 @@ export default {
   <Footer :footerMenu="menuItems" />
 
   <div class="floating_buttons">
-    <button type="button" class="go-up">
-      <a href="#header"
-        ><font-awesome-icon icon="fa-solid fa-arrow-up-long " size="xs"
-      /></a>
-    </button>
+    <a href="#header">
+      <button type="button" class="go-up">
+        <font-awesome-icon
+          icon="fa-solid fa-arrow-up-long "
+          size="xs"
+        /></button
+    ></a>
 
     <button type="button" class="support">
       <font-awesome-icon icon="fa-solid fa-comment" />
